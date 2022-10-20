@@ -7,7 +7,7 @@ const newsPageDataSchema = new Schema({
   short: String,
   description: String,
   author: String,
-  comments: String
+  // comments: String
      
 })
 

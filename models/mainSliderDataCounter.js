@@ -4,8 +4,9 @@ const mainSliderDataSchema = new Schema({
   // id: {type:String},
   // id: String,
   count:  Number,
-  title: String
-     
+  title: String,
+  image: String,
+  
 })
 
 const MainSliderDataCounter = model('MainSliderDataCounter', mainSliderDataSchema);

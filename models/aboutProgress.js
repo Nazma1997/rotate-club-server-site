@@ -2,7 +2,8 @@ const {Schema, model} = require('mongoose');
 
 const aboutProgressDataSchema = new Schema({
   percentage: Number,
-  title: String
+  title: String,
+  donar: Number
      
 })
 

@@ -1,10 +1,10 @@
 const {Schema, model} = require('mongoose');
 
 const newsDataSchema = new Schema({
-  img: String,
+  image: String,
   href: String,
   data: String,
-  comments: Number,
+  // comments: Number,
   title: String
      
 })

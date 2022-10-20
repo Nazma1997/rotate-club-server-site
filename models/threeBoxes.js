@@ -4,7 +4,8 @@ const threeBoxesDataSchema = new Schema({
  icon: String,
  className: String,
  title: String,
- description: String
+ description: String,
+ image: String
      
 })
 

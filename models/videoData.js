@@ -1,7 +1,6 @@
 const {Schema, model} = require('mongoose');
 
 const videoDataSchema = new Schema({
- 
  title: String,
      
 })
