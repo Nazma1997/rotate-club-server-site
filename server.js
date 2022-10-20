@@ -11,7 +11,8 @@ app.use(express.json())
 // const Charity = require('./models/charity');
 // const Causes = require('./models/causesData')
   //  const ThreeBoxesData = require('./models/threeBoxes')
-  const Gallery = require('./models/galleryData')
+  // const Gallery = require('./models/galleryData')
+// const TestimonialData = require('./models/testimonial');
 
 
 // const newSlider = new Slider({
@@ -49,15 +50,21 @@ app.use(express.json())
 // console.log(newBox)
 
 
-const newGallery = new Gallery({
-  image: 'The Img',
-  title: "The title",
-  subTitle: "th sub title"
-})
+// const newGallery = new Gallery({
+//   image: 'The Img',
+//   title: "The title",
+//   subTitle: "th sub title"
+// })
 
-console.log(newGallery)
+// console.log(newGallery)
 
-
+// const newTest = new TestimonialData({
+//    description: "This is des",
+//    image: "this is image",
+//    name: 'This is name',
+//    category: 'this is category'
+// })
+// console.log(newTest)
 
 
 
