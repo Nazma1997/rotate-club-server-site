@@ -5,7 +5,7 @@ const charityDataSchema = new Schema({
   // id: String,
  title:String,
  percent: Number,
- Img: String
+ img: String
      
 })
 

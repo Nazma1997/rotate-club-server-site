@@ -9,8 +9,9 @@ app.use(cors());
 app.use(express.json())
 // const Slider = require('./models/mainSliderDataCounter')
 // const Charity = require('./models/charity');
-const Causes = require('./models/causesData')
-
+// const Causes = require('./models/causesData')
+  //  const ThreeBoxesData = require('./models/threeBoxes')
+  const Gallery = require('./models/galleryData')
 
 
 // const newSlider = new Slider({
@@ -28,16 +29,40 @@ const Causes = require('./models/causesData')
 // })
 // console.log(newCharity)
 
-const newCause = new Causes({
-  img: 'abcd',
-  category: '1',
-  title: 'the Cause',
-  shortDescription: "the causes are ",
-  description: "the single cause",
-  raised: '34',
-  goal: '4999'
+// const newCause = new Causes({
+//   img: 'abcd',
+//   category: '1',
+//   title: 'the Cause',
+//   shortDescription: "the causes are ",
+//   description: "the single cause",
+//   raised: '34',
+//   goal: '4999'
+// })
+// console.log(newCause)
+
+// const newBox = new ThreeBoxesData({
+//   icon: "the Icon",
+//   className: "The ClassName",
+//   title: "The title",
+//   description: " the Description"
+// })
+// console.log(newBox)
+
+
+const newGallery = new Gallery({
+  image: 'The Img',
+  title: "The title",
+  subTitle: "th sub title"
 })
-console.log(newCause)
+
+console.log(newGallery)
+
+
+
+
+
+
+
 
 connectDB('mongodb://localhost:27017/rotate-DB')
 .then(() => {
