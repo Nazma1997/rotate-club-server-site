@@ -3,9 +3,9 @@ const {Schema, model} = require('mongoose');
 const mainSliderDataSchema = new Schema({
   // id: {type:String},
   // id: String,
-  count:  Number,
-  title: String,
-  image: String,
+  count: {type: String, required: true},
+  title: {type: String, required: true},
+  image: {type: String, required: true},
   
 })
 
