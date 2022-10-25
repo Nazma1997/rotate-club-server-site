@@ -4,6 +4,7 @@ const cors = require('cors');
 const app = express()
 // const port = 4000
 const connectDB = require('./db')
+const routes = require('./routes/index');
 dotenv.config()
 app.use(cors());
 app.use(express.json())
@@ -66,7 +67,10 @@ app.use(express.json())
 // })
 // console.log(newTest)
 
-
+/**
+ * fetching all routes
+ */
+app.use(routes)
 
 
 

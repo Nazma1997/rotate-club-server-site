@@ -2,7 +2,7 @@ const Slider = require('../models/mainSliderDataCounter');
 const sliderService = require('../service/mainSliderDataCounter');
 
 // Get All Slider 
-const gatAllSlider = async(req,res, next) => {
+const getAllSlider = async(req,res, next) => {
   try{
     const slider = await sliderService.findAllSliders();
     return res.status(200).json(slider);
@@ -30,7 +30,7 @@ const getSliderById = async(req,res, next) => {
 
 // Post new Slider
 const postSlider = async(req,res, next) => {
-  const {count, title, image} = req.body;
+  const {percent, title, image} = req.body;
 
   try{
     const slider = await sliderService.createSlider({count, title, image})
@@ -44,10 +44,10 @@ const postSlider = async(req,res, next) => {
 // Delete a slider 
 
 const deleteSliderById = async(req, res, next) => {
-  const sliderId = req.params._id;
+  const sliderId = req.params.sliderId;
   try{
     const slider = await sliderService.findSliderByProperty('_id', sliderId);
-    if(!user) {
+    if(!slider) {
       throw error('Slider not found', 404)
     }
 
@@ -63,7 +63,7 @@ const deleteSliderById = async(req, res, next) => {
 // Update Slider (some fields)
 
 const patchSliderById = async(req, res, next) => {
-  const sliderId = req.params._id;
+  const sliderId = req.params.sliderId;
   const {count, title, image} = req.body;
 
   try{
@@ -84,4 +84,13 @@ const patchSliderById = async(req, res, next) => {
   catch(e){
     next(e)
   }
+}
+
+module.exports ={
+  getAllSlider,
+  getSliderById,
+  postSlider,
+  deleteSliderById,
+  patchSliderById
+
 }
