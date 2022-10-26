@@ -1,7 +1,7 @@
 const {Schema, model} = require('mongoose');
 
 const causesDataSchema = new Schema({
-  img: String,
+  image: String,
   category: String,
   title: String,
   shortDescription: String,

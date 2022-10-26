@@ -30,7 +30,7 @@ const getSliderById = async(req,res, next) => {
 
 // Post new Slider
 const postSlider = async(req,res, next) => {
-  const {percent, title, image} = req.body;
+  const {count, title, image} = req.body;
 
   try{
     const slider = await sliderService.createSlider({count, title, image})

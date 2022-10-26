@@ -19,6 +19,14 @@ const findAllCharity = () => {
   return Charity.find();
 }
 
+//post
+
+const createCharity = ({percent, title, image}) => {
+
+  const charity = new Charity({percent, title, image});
+  return charity.save();
+}
+
 
 // Update a slider 
 
@@ -34,7 +42,7 @@ const updateCharity = async(id, data) => {
 
 module.exports = {
   findCharityByProperty,
-  
+  createCharity,
   findAllCharity,
   updateCharity
 
