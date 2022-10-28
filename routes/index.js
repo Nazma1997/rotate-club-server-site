@@ -10,6 +10,7 @@ const gallery = require('./galleryData');
 const testimonial = require('./testimonial');
 const helpThem = require('./helpThem');
 const video = require('./video');
+const news = require('./newsData');
 //Use all routers
 // router.use('/api/v1/sliders', sliderRoutes);
 router.use('/api/v1/slider', sliderRoutes);
@@ -21,5 +22,6 @@ router.use('/api/v1/gallery', gallery);
 router.use('/api/v1/testimonial', testimonial)
 router.use('/api/v1/helpThem', helpThem);
 router.use('/api/v1/video', video);
+router.use('/api/v1/news', news);
 
 module.exports = router

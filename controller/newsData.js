@@ -33,7 +33,7 @@ const postNews = async(req,res, next) => {
   const {image,href,title,date} = req.body;
 
   try{
-    const news = await causesService.createNews({image,href, title, date})
+    const news = await newsService.createNews({image,href, title, date})
     return res.status(201).json(news)
   }
   catch(e){
@@ -78,8 +78,6 @@ const patchNewsById = async(req, res, next) => {
       news.image = image ?? news.image;
       news.date = date ?? news.date;
     
-
-
       await news.save();
 
       return res. status(200).json(news);
