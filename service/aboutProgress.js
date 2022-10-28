@@ -1,47 +1,47 @@
-const NewsData = require('../models/newsData');
+const AboutProgress = require('../models/aboutProgress');
 
 
 // It's not a method. It's a function for patch and delete method
-const findNewsByProperty = (key, value) => {
+const findProgressByProperty = (key, value) => {
   if(key == '_id'){
-    return NewsData.findById(value);
+    return AboutProgress.findById(value);
   }
 
-  return NewsData.findOne({[key] : value});
+  return AboutProgress.findOne({[key] : value});
 }
 
-// Create new news
+// Create new progress
 
-const createNews = ({image,href,data,title}) => {
+const createProgress = ({percent,donar,title}) => {
  
-  const news = new NewsData({image,href,data,title});
-  return news.save();
+  const progress = new AboutProgress({percent,donar,title});
+  return progress.save();
 }
 
 
-// Get All news 
+// Get All Progress
 
-const findAllNews = () => {
-  return NewsData.find();
+const findAllProgress = () => {
+  return AboutProgress.find();
 }
 
 
-// Update a news 
+// Update a Progress 
 
-const updateNews = async(id, data) => {
-  const news = await findNewsByProperty('_id', data._id)
-  if(news){
-    throw error('News already in use', 400)
+const updateProgress = async(id, data) => {
+  const progress = await findProgressByProperty('_id', data._id)
+  if(progress){
+    throw error('Progress already in use', 400)
   }
 
-  return NewsData.findByIdAndUpdate(id, {...data}, 
+  return AboutProgress.findByIdAndUpdate(id, {...data}, 
     {new: true})
 }
 
 module.exports = {
-  findNewsByProperty,
-  createNews,
-  findAllNews,
-  updateNews
+  findProgressByProperty,
+  createProgress,
+  findAllProgress,
+  updateProgress
 
 }
