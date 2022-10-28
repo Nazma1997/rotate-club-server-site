@@ -24,7 +24,7 @@ const findAllContract = () => {
 
 const createContract = ({image, description, tel, email, officeAddress}) => {
  
-  const contract = new VideoData({image, description, tel, email, officeAddress});
+  const contract = new ContractData({image, description, tel, email, officeAddress});
   return contract.save();
 }
 

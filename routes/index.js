@@ -11,6 +11,7 @@ const testimonial = require('./testimonial');
 const helpThem = require('./helpThem');
 const video = require('./video');
 const news = require('./newsData');
+const contract = require('./contractData');
 //Use all routers
 // router.use('/api/v1/sliders', sliderRoutes);
 router.use('/api/v1/slider', sliderRoutes);
@@ -23,5 +24,6 @@ router.use('/api/v1/testimonial', testimonial)
 router.use('/api/v1/helpThem', helpThem);
 router.use('/api/v1/video', video);
 router.use('/api/v1/news', news);
+router.use('/api/v1/contract', contract);
 
 module.exports = router
