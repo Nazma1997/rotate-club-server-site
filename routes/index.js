@@ -9,7 +9,7 @@ const helpingOne = require('./helpingOne');
 const gallery = require('./galleryData');
 const testimonial = require('./testimonial');
 const helpThem = require('./helpThem');
-
+const video = require('./video');
 //Use all routers
 // router.use('/api/v1/sliders', sliderRoutes);
 router.use('/api/v1/slider', sliderRoutes);
@@ -19,6 +19,7 @@ router.use('/api/v1/boxes', threeBoxes);
 router.use('/api/v1/helpingOne', helpingOne);
 router.use('/api/v1/gallery', gallery);
 router.use('/api/v1/testimonial', testimonial)
-router.use('/api/v1/helpThem', helpThem)
+router.use('/api/v1/helpThem', helpThem);
+router.use('/api/v1/video', video);
 
 module.exports = router
