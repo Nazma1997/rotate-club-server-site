@@ -13,6 +13,8 @@ const video = require('./video');
 const news = require('./newsData');
 const contract = require('./contractData');
 const aboutProgress = require('./aboutProgress');
+const event = require('./eventPage');
+const newsPage = require('./newsPage');
 //Use all routers
 // router.use('/api/v1/sliders', sliderRoutes);
 router.use('/api/v1/slider', sliderRoutes);
@@ -27,5 +29,7 @@ router.use('/api/v1/video', video);
 router.use('/api/v1/news', news);
 router.use('/api/v1/contract', contract);
 router.use('/api/v1/progress', aboutProgress);
+router.use('/api/v1/event', event);
+router.use('/api/v1/newsPage', newsPage);
 
 module.exports = router
