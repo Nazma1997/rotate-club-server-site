@@ -1,7 +1,7 @@
 const Causes = require('../models/causesData');
 const causesService = require('../service/causesData');
 
-// Get All Slider 
+// Get All Causes
 const getAllCauses = async(req,res, next) => {
   try{
     const cause = await causesService.findAllCauses();
@@ -12,7 +12,7 @@ const getAllCauses = async(req,res, next) => {
   }
 };
 
-// Get Slider by Id
+// Get Cause by Id
 
 const getCausesById = async(req,res, next) => {
   const causeId = req.params.causeId;
@@ -28,7 +28,7 @@ const getCausesById = async(req,res, next) => {
   }
 }
 
-// Post new Slider
+// Post new Cause
 const postCauses = async(req,res, next) => {
   const {image,category, title, shortDescription,description, raised, goal} = req.body;
 

@@ -79,7 +79,7 @@ const deleteVideoById = async(req, res, next) => {
   try{
     const oneVideo = await videoService.findVideoByProperty('_id', videoId);
     if(!oneVideo) {
-      throw error('video not found', 404)
+      throw error('video not found', 400)
     }
 
     await oneVideo.remove();
