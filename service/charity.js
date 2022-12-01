@@ -21,9 +21,9 @@ const findAllCharity = () => {
 
 //post
 
-const createCharity = ({percent, title, image}) => {
+const createCharity = ({percent, title, selectedFile}) => {
 
-  const charity = new Charity({percent, title, image});
+  const charity = new Charity({percent, title, selectedFile});
   return charity.save();
 }
 

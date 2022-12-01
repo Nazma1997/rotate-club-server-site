@@ -30,10 +30,10 @@ const getCharityById = async(req,res, next) => {
 
 //post
 const postCharity = async(req,res, next) => {
-  const {percent, title, image} = req.body;
+  const {percent, title, selectedFile} = req.body;
 
   try{
-    const charity = await charityService.createCharity({percent, title, image})
+    const charity = await charityService.createCharity({percent, title, selectedFile})
     return res.status(201).json(charity)
   }
   catch(e){
@@ -48,7 +48,7 @@ const postCharity = async(req,res, next) => {
 
 const patchCharityById = async(req, res, next) => {
   const charityId = req.params.charityId;
-  const {percent, title, image} = req.body;
+  const {percent, title, selectedFile} = req.body;
 
   try{
       const charity = await charityService.findCharityByProperty('_id',charityId);
@@ -59,11 +59,27 @@ const patchCharityById = async(req, res, next) => {
 
       charity.percent = percent ?? percent.count;
       charity.title = title ?? charity.title;
-      charity.image = image ?? charity.image;
+      charity.selectedFile = selectedFile ?? charity.selectedFile;
 
       await charity.save();
 
       return res. status(200).json(charity);
+  }
+  catch(e){
+    next(e)
+  }
+}
+const deleteCharityById = async(req, res, next) => {
+  const charityId = req.params.charityId;
+  try{
+    const charity = await charityService.findCharityByProperty('_id', charityId);
+    if(!charity) {
+      throw error('Progress not found', 404)
+    }
+
+    await charity.remove();
+
+    return res.status(203).json({message: 'Progress Deleted Successfully', charity}).send()
   }
   catch(e){
     next(e)
@@ -74,6 +90,7 @@ module.exports ={
   getAllCharity,
   getCharityById,
   patchCharityById,
+  deleteCharityById,
   postCharity
 
 }

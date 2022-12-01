@@ -78,8 +78,8 @@ app.use(routes)
 connectDB('mongodb://localhost:27017/rotate-DB')
 .then(() => {
   console.log('DataBase is Connected')
-  app.listen(4000, () => {
-    console.log('Server is Listening on port 4000');
+  app.listen(5000, () => {
+    console.log('Server is Listening on port 5000');
 })
 })
 .catch(error => {
