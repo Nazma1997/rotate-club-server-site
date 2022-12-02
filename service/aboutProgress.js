@@ -12,9 +12,9 @@ const findProgressByProperty = (key, value) => {
 
 // Create new progress
 
-const createProgress = ({percent,donar,title}) => {
+const createProgress = ({percentage,donar,title}) => {
  
-  const progress = new AboutProgress({percent,donar,title});
+  const progress = new AboutProgress({percentage,donar,title});
   return progress.save();
 }
 

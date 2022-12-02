@@ -30,11 +30,11 @@ const getProgressById = async(req,res, next) => {
 
 // Post new Progress
 const postProgress = async(req,res, next) => {
-  const {percent,title,donar} = req.body;
+  const {percentage,title,donar} = req.body;
 
   try{
-    const progress = await progressService.createProgress({percent, title, donar})
-    return res.status(201).json(percent)
+    const progress = await progressService.createProgress({percentage, title, donar})
+    return res.status(201).json(progress)
   }
   catch(e){
     next(e)
@@ -64,7 +64,7 @@ const deleteProgressById = async(req, res, next) => {
 
 const patchProgressById = async(req, res, next) => {
   const progressId = req.params.progressId;
-  const {percent, title, donar} = req.body;
+  const {percentage, title, donar} = req.body;
 
   try{
       const progress = await progressService.findProgressByProperty('_id',progressId);
@@ -73,7 +73,7 @@ const patchProgressById = async(req, res, next) => {
         throw error('Progress not found', 400);
       }
 
-      progress.percent = percent ?? progress.percent;
+      progress.percentage = percentage ?? progress.percentage;
       progress.title = title ?? progress.title;
       progress.donar = donar ?? progress.donar;
       

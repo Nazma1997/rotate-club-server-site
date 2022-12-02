@@ -21,7 +21,7 @@ router.get('/', charityController.getAllCharity);
 
  router.post('/', charityController.postCharity);
 
-
+// delete
  router.delete('/:charityId', charityController.deleteCharityById);
 
 module.exports = router

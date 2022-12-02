@@ -24,7 +24,7 @@ router.get('/', videoController.getAllVideo);
  * Delete a video
  * @method DELETE
  */
-router.delete('/:helpThemId',videoController.deleteVideoById);
+router.delete('/:videoId',videoController.deleteVideoById);
 
 
 
