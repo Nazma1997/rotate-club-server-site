@@ -15,7 +15,7 @@ const contract = require('./contractData');
 const aboutProgress = require('./aboutProgress');
 const event = require('./eventPage');
 const newsPage = require('./newsPage');
-const fundRaising = require('./fundRaising');
+const fund = require('./fundRaising');
 //Use all routers
 // router.use('/api/v1/sliders', sliderRoutes);
 router.use('/api/v1/slider', sliderRoutes);
@@ -32,6 +32,6 @@ router.use('/api/v1/contract', contract);
 router.use('/api/v1/progress', aboutProgress);
 router.use('/api/v1/event', event);
 router.use('/api/v1/newsPage', newsPage);
-router.use('/api/v1/fund', fundRaising);
+router.use('/api/v1/fund', fund);
 
 module.exports = router
